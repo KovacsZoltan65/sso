@@ -1,0 +1,29 @@
+composer create-project laravel/laravel:^8.3 .
+composer require laravel/ui
+composer require laravel/passport --with-all-dependencies
+
+php artisan config:cache
+php artisan migrate
+php artisan passport:install --uuids
+    Personal access client created successfully.
+        Client ID: 99e3829e-437c-4691-a008-8682f475a735
+        Client secret: woY5TUuGFh4IYUOFvhb2BB6RxtFN2burpZhPVH1C
+    Password grant client created successfully.
+        Client ID: 99e3829e-5cc1-4811-a113-cbdd9212cb39
+        Client secret: oAK78lkWkSCYBx3seNknXbR8I7qZEbCRR7lwV0cE
+
+php artisan ui bootstrap --auth
+npm install
+npm run dev
+
+php artisan serve
+
+create user:
+    name:       SSO Admin
+    email:      sso_admin@example.com
+    password:   password
+    
+    Client ID: 99e38ff5-6e4f-4882-a47b-b2b230294206
+    Client secret: G8OOctf31Q1RRqitMHPGejtvbz1KRPrlcBUcMYGu
+
+php artisan passport:client

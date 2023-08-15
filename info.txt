@@ -1,0 +1,12 @@
+https://www.youtube.com/watch?v=oJCImQWfCCM&ab_channel=myPHPnotes
+
+https://www.youtube.com/watch?v=YuKbVdGm0es&list=PLC-R40l2hJfdyfZ3jkDKOcyoqmIgw2wda&index=4&ab_channel=myPHPnotes
+https://www.youtube.com/watch?v=I9Pyo6C0EGA&list=PLC-R40l2hJfdyfZ3jkDKOcyoqmIgw2wda&index=5&ab_channel=myPHPnotes
+
+echo "# sso" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/KovacsZoltan65/sso.git
+git push -u origin main
