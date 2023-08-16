@@ -64,6 +64,13 @@
                                 @endif
                             </div>
                         </div>
+
+                        <div class="row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                sso_admin@gmail.com | password</br>
+                                gruiz@downalapitvany.hu | password</br>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

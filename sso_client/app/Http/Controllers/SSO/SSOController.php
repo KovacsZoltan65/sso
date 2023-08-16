@@ -35,7 +35,7 @@ class SSOController extends Controller
             [
                 'grant_type' => 'authorization_code',
                 'client_id' => '99e38ff5-6e4f-4882-a47b-b2b230294206',
-                'client_secret' => 'G8OOctf31Q1RRqitMHPGejtvbz1KRPrlcBUcMYGu',
+                'client_secret' => 'cMOcNhVwLkZqR6EAgOLLen2F03leCxEzzhC4rxVt',
                 'redirect_uri' => 'http://localhost:8080/callback',
                 'code' => $request->code,
             ]
