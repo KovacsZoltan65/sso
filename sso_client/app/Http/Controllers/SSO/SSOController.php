@@ -12,13 +12,13 @@ class SSOController extends Controller
     public function getLogin(Request $request){
         $request->session()->put('state', $state = Str::random(40));
         $query = http_build_query([
-            'client_id' => '99e74928-220f-482e-8545-9f3101d2b08e',
-            'redirect_uri' => 'http://localhost:8080/callback',
+            'client_id' => config('auth.client_id'),
+            'redirect_uri' => config('auth.callback'),
             'response_type' => 'code',
-            'scope' => 'view-user',
+            'scope' => config('auth.scopes'),
             'state' => $state,
         ]);
-        return redirect('http://localhost:8000/oauth/authorize?' . $query);
+        return redirect(config('auth.sso_host') . '/oauth/authorize?' . $query);
     }
     
     public function getCallback(Request $request){
@@ -27,19 +27,19 @@ class SSOController extends Controller
         throw_unless(strlen($state) > 0 && $state == $request->state, InvalidArgumentException::class);
 
         $response = Http::asForm()->post(
-            'http://localhost:8000/oauth/token',
+            config('auth.sso_host') . '/oauth/token',
             [
                 'grant_type' => 'authorization_code',
-                'client_id' => '99e74928-220f-482e-8545-9f3101d2b08e',
-                'client_secret' => 'YgrDxWvAO79tMk7P8RznvcYasrvsq1GQC94lYOOm',
-                'redirect_uri' => 'http://localhost:8080/callback',
+                'client_id' => config('auth.client_id'),
+                'client_secret' => config('auth.client_secret'),
+                'redirect_uri' => config('auth.callback'),
                 'code' => $request->code,
             ]
         );
         $request->session()->put($response->json());
 
         //return redirect('/authuser');
-        return redirect(route('sso.connect'));
+        return redirect(route('sso.authuser'));
     }
     
     public function authUser(Request $request){
@@ -47,7 +47,7 @@ class SSOController extends Controller
         $response = Http::withHeaders([
             'Accept' => 'application/json',
             'Authorization' => 'Bearer '. $access_token,
-        ])->get('http://localhost:8000/api/user');
+        ])->get(config('auth.sso_host') . '/api/user');
 
         return $response->json();
     }

@@ -47,6 +47,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "server:start": "php artisan serve --port 8080",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
