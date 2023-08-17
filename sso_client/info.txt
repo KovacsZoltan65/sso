@@ -1,0 +1,5 @@
+composer require "laravel/ui" "^3.2"
+php artisan ui bootstrap --auth
+
+npm install
+npm run dev
