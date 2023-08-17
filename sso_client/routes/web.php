@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\SSO\SSOController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get(
+    '/sso/login', 
+    [SSOController::class, 'getLogin']
+)->name('sso.login');
+
+Route::get(
+    '/callback', 
+    [SSOController::class, 'getCallback']
+)->name('sso.callback');
+
+Route::get(
+    '/sso/authuser', 
+    [SSOController::class, 'authUser']
+)->name('sso.authuser');
+
+/*
 Route::get('/login', function (Request $request) {
     $request->session()->put('state', $state = Str::random(40));
     $query = http_build_query([
@@ -61,3 +78,4 @@ Route::get('/authuser', function(Request $request){
 
     return $response->json();
 });
+*/
