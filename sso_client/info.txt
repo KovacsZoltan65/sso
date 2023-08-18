@@ -3,3 +3,9 @@ php artisan ui bootstrap --auth
 
 npm install
 npm run dev
+
+npm install fails "invalid version"
+	Delete the node_modules folder
+	Delete package-lock.json file
+	run npm cache clean --force
+	And try installing again using npm install

@@ -25,6 +25,7 @@ Route::get('/callback', [SSOController::class, 'getCallback'])->name('sso.callba
 
 Route::get('/sso/authuser', [SSOController::class, 'authUser'])->name('sso.authuser');
 
-Auth::routes();
+Auth::routes(['register' => false,'reset' => false,]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
