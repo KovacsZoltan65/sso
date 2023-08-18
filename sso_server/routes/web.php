@@ -20,3 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/different_account', [App\Http\Controllers\HomeController::class, 'getDifferentAccount'])->name('different_account');

@@ -11,7 +11,6 @@ Building OAuth 2.0 "Single Sign On" SSO Server in PHP (Laravel) - Part 7 - Clien
 Building OAuth 2.0 "Single Sign On" SSO Server in PHP (Laravel) - Part 8 - Stop Auto-Authorize
 	https://www.youtube.com/watch?v=L1DLRM_GT_0
 
-
 echo "# sso" >> README.md
 git init
 git add README.md
