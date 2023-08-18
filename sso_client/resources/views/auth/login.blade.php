@@ -8,6 +8,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+                <!--
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -65,6 +66,8 @@
                             </div>
                         </div>
                     </form>
+                -->
+                <a href="{{ route('sso.login') }}" class="btn btn-block btn-danger btn-sm">Login with SSO</a>
                 </div>
             </div>
         </div>
