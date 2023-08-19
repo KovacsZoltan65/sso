@@ -9,3 +9,5 @@ npm install fails "invalid version"
 	Delete package-lock.json file
 	run npm cache clean --force
 	And try installing again using npm install
+
+php artisan optimize
